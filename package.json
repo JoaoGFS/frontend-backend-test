@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "axios": "^0.19.0",
+    "concurrently": "^4.1.0",
+    "cors": "^2.8.5",
+    "nodemon": "^1.19.1",
     "nthline": "^1.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

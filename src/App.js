@@ -17,13 +17,16 @@ export default class App extends Component {
 
   handleSubmit(e) {
     console.log(this.state.value)
-    Axios.post('localhost:4000', {
+    Axios.post('http://localhost:4000', {
       num: this.state.value
     })
-      .then(res => {
+      .then((res) => {
         console.log(`res.data.word:${res.data.word}`)
+        this.setState({
+          word: res.data.word
+        })
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err)
       })
     e.preventDefault()
@@ -37,17 +40,17 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="box">
-        <form onSubmit={this.handleSubmit} method="post">
+      <div className='box'>
+        <form onSubmit={this.handleSubmit} method='post'>
           <label>
             Number:
             <input
-              type="text"
+              type='text'
               value={this.state.value}
               onChange={this.handleChange}
-              placeholder="Digite um número"
+              placeholder='Digite um número'
             />
-            <button type="submit">Procurar</button>
+            <button type='submit'>Procurar</button>
             <p>{this.state.word}</p>
           </label>
         </form>
